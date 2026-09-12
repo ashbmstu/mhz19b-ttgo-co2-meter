@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: The printed case
+    url: https://www.thingiverse.com/thing:7280723
+    about: Questions and remixes of the enclosure belong on Thingiverse.
+  - name: The display driver
+    url: https://github.com/russhughes/st7789_mpy
+    about: The st7789 module and its prebuilt firmware are maintained separately.

@@ -1,0 +1,92 @@
+name: Bug report
+description: Something on a built meter does not work
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before filing, please check
+        [docs/troubleshooting.md](https://github.com/ashbmstu/mhz19b-ttgo-co2-meter/blob/main/docs/troubleshooting.md).
+        Two things account for most reports: the sensor needs about three
+        minutes to warm up, and `RX` and `TX` cross over between the board and
+        the sensor.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What the screen shows
+      description: Word for word, including any error text.
+      placeholder: 'It says "Sensor FAIL" and the reading stays at four dashes.'
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+
+  - type: input
+    id: uptime
+    attributes:
+      label: How long it had been powered on
+      description: The first three minutes after power-on are warm-up and do not count.
+      placeholder: About twenty minutes
+    validations:
+      required: true
+
+  - type: input
+    id: micropython
+    attributes:
+      label: MicroPython version and firmware image
+      description: Run `import sys; sys.implementation` at the REPL and paste the result, and say which firmware you flashed.
+      placeholder: "(name='micropython', version=(1, 20, 0, '')) - st7789_mpy T-DISPLAY build"
+    validations:
+      required: true
+
+  - type: input
+    id: board
+    attributes:
+      label: Board
+      description: Which T-Display revision, and which USB-serial chip it has.
+      placeholder: TTGO T-Display V1.1, CH9102
+    validations:
+      required: true
+
+  - type: input
+    id: sensor
+    attributes:
+      label: Sensor
+      description: The range marked on the MH-Z19B, and where it came from.
+      placeholder: MH-Z19B 0-5000 ppm, from a marketplace seller
+    validations:
+      required: true
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Serial console
+      description: |
+        A dozen of the five-second lines, starting from the reset:
+
+        ```
+        Sensor: ok
+        ABC: off
+        CO2: 812 ppm
+        ```
+      render: shell
+    validations:
+      required: true
+
+  - type: dropdown
+    id: publishing
+    attributes:
+      label: Is publishing configured?
+      description: Whether there is a config.py on the board. Never paste its contents.
+      options:
+        - "No - the meter runs offline"
+        - "Yes - it publishes to ThingSpeak"
+    validations:
+      required: true

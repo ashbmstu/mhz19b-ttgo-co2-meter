@@ -1,0 +1,53 @@
+mhz19b-ttgo-co2-meter
+Copyright (c) 2026 ash and contributors
+
+The firmware in src/ was written for this project and is MIT licensed, as per
+LICENSE. What follows covers the parts that came from somewhere else. This file
+is not legal advice; consult the upstream licences for the authoritative terms.
+
+---
+
+The display driver
+
+src/tft_config.py imports a module called st7789, which is not in this
+repository. It is a C module compiled into the MicroPython firmware, and it is
+MIT licensed.
+
+    Modifications and additions Copyright (c) 2020, 2021 Russ Hughes
+    Copyright (c) 2019 Ivan Belokobylskiy
+    https://github.com/russhughes/st7789_mpy
+
+The prebuilt firmware images in that repository are the ones this project
+expects to be running on; see docs/flashing.md.
+
+---
+
+src/vga1_8x8.py
+
+The classic 8 x 8 VGA text font, carried in the module layout used by
+st7789_mpy so that the firmware needs no extra download. The glyph table is the
+IBM PC text font, which has been reproduced in public sources for decades; the
+module layout around it follows st7789_mpy, above.
+
+---
+
+The enclosure
+
+The printed case is published separately on Thingiverse under a Creative
+Commons Attribution-ShareAlike licence, which is a different licence from the
+MIT terms covering the firmware here.
+
+    https://www.thingiverse.com/thing:7280723
+
+It is itself a remix. The original case, also Creative Commons
+Attribution-ShareAlike, is by vmensik.
+
+    https://www.thingiverse.com/thing:3777859
+
+---
+
+ThingSpeak
+
+The optional publishing feature posts to ThingSpeak, a service operated by
+MathWorks. Nothing from that service is included here; the firmware makes an
+ordinary HTTP request to a public API. See docs/thingspeak.md.

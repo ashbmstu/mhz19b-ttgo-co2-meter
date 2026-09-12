@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" width="760" height="430" role="img" aria-labelledby="t d">
+  <title id="t">CO2 meter wiring</title>
+  <desc id="d">Four wires between a TTGO T-Display V1.1 and an MH-Z19B sensor. The sensor runs from 5V and ground, receives on its RX pin from GPIO25, and transmits on its TX pin into GPIO26. The 5V pin is only powered while USB is connected.</desc>
+
+  <rect width="760" height="430" fill="#ffffff"/>
+
+  <g font-family="ui-sans-serif, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" fill="#1f2328">
+
+    <!-- wires -->
+    <g stroke-width="2" fill="none">
+      <path d="M310 175 H450" stroke="#bc4c00" stroke-width="3"/>
+      <path d="M310 210 H450" stroke="#57606a"/>
+      <path d="M310 245 H450" stroke="#0969da"/>
+      <path d="M310 280 H450" stroke="#8250df"/>
+    </g>
+
+    <!-- direction of the two data lines -->
+    <g stroke="none">
+      <polygon points="374,239 388,245 374,251" fill="#0969da"/>
+      <polygon points="386,274 372,280 386,286" fill="#8250df"/>
+    </g>
+
+    <!-- boxes -->
+    <g fill="#ffffff" stroke="#57606a" stroke-width="2">
+      <rect x="80" y="110" width="230" height="210" rx="8"/>
+      <rect x="450" y="110" width="230" height="210" rx="8"/>
+    </g>
+
+    <!-- titles -->
+    <g text-anchor="middle">
+      <text x="195" y="145" font-size="16" font-weight="600">TTGO T-Display V1.1</text>
+      <text x="195" y="164" font-size="12" fill="#57606a">ESP32, 1.14-inch IPS panel</text>
+      <text x="565" y="145" font-size="16" font-weight="600">MH-Z19B</text>
+      <text x="565" y="164" font-size="12" fill="#57606a">NDIR carbon dioxide sensor</text>
+    </g>
+
+    <!-- pin labels -->
+    <g font-size="13">
+      <g text-anchor="end">
+        <text x="300" y="180">5V</text>
+        <text x="300" y="215">GND</text>
+        <text x="300" y="250">GPIO25</text>
+        <text x="300" y="285">GPIO26</text>
+      </g>
+      <g text-anchor="start">
+        <text x="460" y="180">Vin</text>
+        <text x="460" y="215">GND</text>
+        <text x="460" y="250">RX</text>
+        <text x="460" y="285">TX</text>
+      </g>
+    </g>
+
+    <!-- what the board already carries -->
+    <g text-anchor="middle" font-size="12" fill="#57606a">
+      <text x="195" y="300">nothing to wire for the display</text>
+    </g>
+
+    <!-- notes -->
+    <g font-size="13" fill="#57606a">
+      <text x="80" y="360"><tspan fill="#bc4c00" font-weight="600">5 V only over USB.</tspan> The sensor needs 5 V; the board has it only while a USB cable is plugged in.</text>
+      <text x="80" y="384"><tspan fill="#1f2328" font-weight="600">The pair crosses over.</tspan> GPIO25 is the board's transmit pin and goes to the sensor's RX.</text>
+      <text x="80" y="408">The sensor also has HD, Vo and PWM pins. None of them are used here; leave them unconnected.</text>
+    </g>
+
+  </g>
+</svg>
