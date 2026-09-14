@@ -39,11 +39,13 @@ this is the point at which somebody else could build one.
   than from constants in the firmware. `src/config.example.py` shows what goes
   in it, and `.gitignore` keeps the real one out of git.
 - **The font is a file rather than a string.** Previously the firmware carried
-  the whole 8 × 8 font as a literal and wrote it to the filesystem at boot if it
-  was missing. It ships as `src/vga1_8x8.py` instead, which removed about
-  3.8 KB of unreadable text from the top of `main.py`. The glyph table is
-  identical, with the last entry padded out so the table is a whole number of
-  characters.
+  an 8 × 8 font as a literal and wrote it to the filesystem at boot if it was
+  missing, which removed about 3.8 KB of unreadable text from the top of
+  `main.py`. It ships as `src/vga1_8x8.py` instead: the VGA font file from
+  st7789_mpy, the same module the prebuilt firmware already has frozen in. The
+  old literal turned out to be a different, unattributed glyph set with a
+  damaged lower-case block, so the digits now have the VGA shapes and the
+  `ppm` label renders properly.
 - **Panel dimensions and rotation come from `tft_config.py`** instead of being
   repeated as literals in the drawing code, which had the rotation set in two
   places with two different values.

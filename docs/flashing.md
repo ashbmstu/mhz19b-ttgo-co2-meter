@@ -1,6 +1,6 @@
 # Flashing
 
-Two stages: put MicroPython on the board once, then copy four files onto it.
+Two stages: put MicroPython on the board once, then copy three files onto it.
 About fifteen minutes the first time, a few seconds every time after that.
 
 ## What is different about this board
@@ -61,7 +61,7 @@ command starts, and let go once it says `Connecting...`.
    prompt. Press Ctrl+C there if it does not.
 
 3. **Copy the files.** *View* → *Files* gives you your computer on top and the
-   board underneath. Take the four files from `src/` and, for each one,
+   board underneath. Take the three files from `src/` and, for each one,
    right-click → **Upload to /**:
 
    ```

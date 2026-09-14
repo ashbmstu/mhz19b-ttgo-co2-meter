@@ -1,5 +1,5 @@
 mhz19b-ttgo-co2-meter
-Copyright (c) 2026 ash and contributors
+Copyright (c) 2026 ASH and contributors
 
 The firmware in src/ was written for this project and is MIT licensed, as per
 LICENSE. What follows covers the parts that came from somewhere else. This file
@@ -24,10 +24,16 @@ expects to be running on; see docs/flashing.md.
 
 src/vga1_8x8.py
 
-The classic 8 x 8 VGA text font, carried in the module layout used by
-st7789_mpy so that the firmware needs no extra download. The glyph table is the
-IBM PC text font, which has been reproduced in public sources for decades; the
-module layout around it follows st7789_mpy, above.
+The 8 x 8 VGA text font, carried unmodified from st7789_mpy's fonts/bitmap
+directory so that the meter also runs on a firmware build that does not have
+the font frozen in. The module is MIT licensed with the rest of st7789_mpy,
+above. Its glyphs were converted from vga_8x8.bin in the romfont collection,
+which gathers the text-mode fonts of old PC video ROMs; that collection notes
+that the original copyright status of those ROM fonts is unclear, and they
+have been reproduced in open-source projects for decades on that basis.
+
+    https://github.com/russhughes/st7789_mpy/tree/master/fonts/bitmap
+    https://github.com/spacerace/romfont
 
 ---
 
